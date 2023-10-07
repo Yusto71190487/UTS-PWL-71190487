@@ -1,46 +1,42 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import Home from './components/Home';
-import LoginPage from './components/LoginPage';
-import './index.css';
-import reportWebVitals from './reportWebVitals';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import RegisterPage from './components/RegisterPage';
-import DashboardPage from './components/DashboardPage';
-import UpdatePage from './components/UpdatePage';
-
-
-
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Home from "./components/Home";
+import LoginPage from "./components/LoginPage";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import RegisterPage from "./components/RegisterPage";
+import DashboardPage from "./components/DashboardPage";
+import UpdatePage from "./components/UpdatePage";
 
 const router = createBrowserRouter([
-   {
-    path: "/home",
-    element: <Home />
-   },
-   {
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
     path: "/login",
-    element:<LoginPage />
-   },
-   {
+    element: <LoginPage />,
+  },
+  {
     path: "/register",
-    element:<RegisterPage />
-   },
-   {
+    element: <RegisterPage />,
+  },
+  {
     path: "/dashboard",
-    element:<DashboardPage />
-   },
-   {
-    path:"update",
-    element:<UpdatePage/>
-   }
+    element: <DashboardPage />,
+  },
+  {
+    path: "update",
+    element: <UpdatePage />,
+  },
+]);
 
-])
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

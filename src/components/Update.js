@@ -32,7 +32,7 @@ const Update = () => {
     await api
       .post("/api/products", formData)
       .then(() => {
-        navigate("/products");
+        navigate("/dashboard");
       })
       .catch((error) => {
         // Periksa apakah error.response tidak undefined
