@@ -40,19 +40,20 @@
 }
 
 .MyRgform {
-  width: 1184px;
-  margin: auto;
-  height: 500px;
-  background-color: #183758;
-  margin-top: 100px;
-  border-radius: 20px;
-  padding: 50px;
+  width: 800px;
+    margin: auto; 
+    height: 500px;
+    background-color: #183758;
+    margin-top: 100px; 
+    margin-bottom: 300px;
+    border-radius: 20px;
+    padding: 50px;
 }
 
 .MyRgform button {
   width: 205px;
   margin: auto;
-  margin-left: 870px;
+  margin-left: 500px;
 }
 
 /* table */
@@ -80,4 +81,24 @@
   width: 205px;
   margin: auto;
   margin-left: 870px;
+}
+
+.myProduct {
+  margin-top: -350px; 
+  margin-bottom: 400px; 
+  margin-left: 172px;
+  width:200px;
+}
+
+.myHero{
+  margin-top:-600px;
+  margin-left: 300px;
+  margin-right: 30px; 
+  margin-top: -750px;
+}
+
+.myPagination {
+  margin-top:-300px;
+  margin-left: 700px;
+ 
 }
