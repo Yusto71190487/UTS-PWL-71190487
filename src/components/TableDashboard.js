@@ -40,15 +40,15 @@ const TableDashboard = (props) => {
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label className="text-white">Gambar Product</Form.Label>
-          <Form.Control
-            type="file"
-            placeholder="Gambar Product"
-           />
-           </Form.Group>
-              
+                <Form.Label className="text-white">Gambar Product</Form.Label>
+                <Form.Control type="file" placeholder="Gambar Product" />
+              </Form.Group>
 
-              <Button style={{ marginLeft:"270px" }} className="btn btn-warning" type="submit">
+              <Button
+                style={{ marginLeft: "270px" }}
+                className="btn btn-warning"
+                type="submit"
+              >
                 UBAH
               </Button>
             </Form>
@@ -93,11 +93,17 @@ const TableDashboard = (props) => {
               </td>
               <td>
                 <a onClick={() => SetEdit(true)} className="text-warning">
-                  <FontAwesomeIcon style={{ height:"30px", cursor:"pointer" }} icon={faPenToSquare}></FontAwesomeIcon>
+                  <FontAwesomeIcon
+                    style={{ height: "30px", cursor: "pointer" }}
+                    icon={faPenToSquare}
+                  ></FontAwesomeIcon>
                 </a>
 
                 <a className="text-danger" href="">
-                  <FontAwesomeIcon style={{ height:"30px", marginLeft:"20px" }}icon={faTrash}></FontAwesomeIcon>
+                  <FontAwesomeIcon
+                    style={{ height: "30px", marginLeft: "20px" }}
+                    icon={faTrash}
+                  ></FontAwesomeIcon>
                 </a>
               </td>
             </tr>

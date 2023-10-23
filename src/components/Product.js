@@ -20,7 +20,7 @@ const MyModal = () => {
       <h4>Rp 500.000</h4>
       <h4>Jeans Pria</h4>
       <p>Celana Levist Original Import</p>
-      <Button style={{ backgroundColor:"#E31E26", marginLeft:"270px" }}>Checkoud</Button>
+      <Button style={{ backgroundColor:"#E31E26", marginLeft:"270px" }}>Checkout</Button>
       </div>
     </>
   )
