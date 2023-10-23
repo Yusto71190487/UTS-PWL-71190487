@@ -1,30 +1,68 @@
-import React, { useState, useEffect } from "react";
-import { Table, Button, Container } from "react-bootstrap";
+import React, { useState } from "react";
+import { Table, Button, Container, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import api from "../api/index";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPenToSquare, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const TableDashboard = (props) => {
-  const [products, setProducts] = useState([]);
+  const [ShowEdit, SetEdit] = useState(false);
 
-  const fetchDataProducts = async () => {
-    await api.get("/api/products").then((response) => {
-      setProducts(response.data.data.data);
-    });
+  const ModalUpdate = () => {
+    return (
+      <>
+        <Container fluid>
+          <div className="ModalEdit">
+            <Form>
+              <h5
+                style={{ cursor: "pointer", marginLeft: "350px" }}
+                className="text-light"
+                onClick={() => SetEdit(false)}
+              >
+                X
+              </h5>
+              <h1 className="text-center text-light">Edit Product</h1>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label className="text-white">Nama Product</Form.Label>
+                <Form.Control type="name" placeholder="Nama Product" />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label className="text-white">Harga Product</Form.Label>
+                <Form.Control type="name" placeholder="Harga Product" />
+              </Form.Group>
+
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label className="text-white">Kategori Product</Form.Label>
+                <Form.Control type="name" placeholder="Kategori Product" />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label className="text-white">Detail Product</Form.Label>
+                <Form.Control type="name" placeholder="Detail Product" />
+              </Form.Group>
+
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label className="text-white">Gambar Product</Form.Label>
+          <Form.Control
+            type="file"
+            placeholder="Gambar Product"
+           />
+           </Form.Group>
+              
+
+              <Button style={{ marginLeft:"270px" }} className="btn btn-warning" type="submit">
+                UBAH
+              </Button>
+            </Form>
+          </div>
+        </Container>
+      </>
+    );
   };
 
-  useEffect(() => {
-    fetchDataProducts();
-  }, []);
-  const deleteProduct = async (id) => {
-    await api.delete(`/api/products/${id}`).then(() => {
-      fetchDataProducts();
-    });
-  };
   return (
     <Container>
       <Button className="mt-4 text-white" variant="warning">
         <Link to="/update" className="text-decoration-none text-light">
-          <strong>Tambah Data +</strong>
+          <strong>UPDATE +</strong>
         </Link>
       </Button>{" "}
       <div className="mt-4 text-center">
@@ -41,43 +79,50 @@ const TableDashboard = (props) => {
             </tr>
           </thead>
           <tbody>
-            {products.length > 0 ? (
-              products.map((product, index) => (
-                <tr key={index}>
-                  <td>{product.id}</td>
-                  <td>{product.nama}</td>
-                  <td>Rp {product.harga}</td>
-                  <td>{product.kategori}</td>
-                  <td>{product.detail}</td>
-                  <td>
-                    <img
-                      src={product.gambar}
-                      style={{ width: "78px", height: "51px" }}
-                      alt={product.nama}
-                    />
-                  </td>
-                  <td>
-                    <button
-                      className="btn btn-danger btn-sm"
-                      onClick={() => deleteProduct(product.id)}
-                    >
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              ))
-            ) : (
-              <tr>
-                <td colspan="8" className="text-center">
-                  <div className="alert alert-danger mb-8">
-                    Data belum tersedia!!
-                  </div>
-                </td>
-              </tr>
-            )}
+            <tr>
+              <td>1</td>
+              <td>Celana Levist</td>
+              <td>Rp 500.000</td>
+              <td>Jeans Pria</td>
+              <td>celana levist original</td>
+              <td>
+                <img
+                  src={props.image}
+                  style={{ width: "78px", height: "51px" }}
+                />
+              </td>
+              <td>
+                <a onClick={() => SetEdit(true)} className="text-warning">
+                  <FontAwesomeIcon style={{ height:"30px", cursor:"pointer" }} icon={faPenToSquare}></FontAwesomeIcon>
+                </a>
+
+                <a className="text-danger" href="">
+                  <FontAwesomeIcon style={{ height:"30px", marginLeft:"20px" }}icon={faTrash}></FontAwesomeIcon>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
           </tbody>
         </Table>
       </div>
+      {ShowEdit && <ModalUpdate />}
     </Container>
   );
 };

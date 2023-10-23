@@ -84,21 +84,55 @@
 }
 
 .myProduct {
-  margin-top: -350px; 
-  margin-bottom: 400px; 
-  margin-left: 172px;
-  width:200px;
+  margin-top: -400px; 
+  margin-bottom: 500px; 
+  margin-left: 290px;
+  /* width:200px; */
 }
 
+
+
 .myHero{
-  margin-top:-600px;
+  margin-top:-2000px; 
+  margin-bottom: 400px; 
   margin-left: 300px;
   margin-right: 30px; 
-  margin-top: -750px;
 }
 
 .myPagination {
   margin-top:-300px;
   margin-left: 700px;
  
+}
+
+.mySidebar {
+  background-color: #09213B;
+  width: 200px;
+  height: 2000px;
+  margin-top: -20px;
+  padding: 50px;
+  margin-right:-50px;
+}
+
+.myModal {
+  width: 300px;
+  position: fixed; 
+  left: 0;
+  top: 0;
+  bottom: 0;
+  top: 0;  
+} 
+
+.modal-container{
+  width: 443px;
+  height: 600px;
+  position: fixed; 
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  max-width: 30rem;
+  background-color: white;
+  border-radius: 0.5 rem;
+  box-shadow: 20px 20px 50px grey;
+  padding: 50px;
 }

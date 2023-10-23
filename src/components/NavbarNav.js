@@ -1,8 +1,6 @@
 import React from 'react';
 import { Navbar, Container, NavDropdown, Nav } from 'react-bootstrap'
 import { Link } from "react-router-dom";
-
-
 const NavbarNav = (props) => {
   return (
     <div className='myNav'>
@@ -21,7 +19,4 @@ const NavbarNav = (props) => {
     </div>
   )
 }
-
-
-
 export default NavbarNav

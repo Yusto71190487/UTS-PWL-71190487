@@ -75,6 +75,18 @@ const Register = () => {
           )}
         </Form.Group>
 
+        <Form.Group className="mb-4" controlId="formBasicPassword">
+          <Form.Label className="text-white">Konfirm Password</Form.Label>
+          <Form.Control
+            type="password"
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          {errors.password && (
+            <div className="alert alert-danger mt-2">{errors.password[0]}</div>
+          )}
+        </Form.Group>
+
         <Button className="btn btn-warning bnt mb-3" type="submit">
           REGISTRASI
         </Button>

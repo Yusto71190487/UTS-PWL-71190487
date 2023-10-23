@@ -34,7 +34,6 @@ const Login = (props) => {
         }
       });
   };
-
   return (
     <div className="MyLg">
       <div>
@@ -68,7 +67,7 @@ const Login = (props) => {
         </Form.Group>
 
         <Button className="btn-block" type="submit">
-          Submit
+          LOGIN
         </Button>
       </Form>
       <p className="text-center text-white">
