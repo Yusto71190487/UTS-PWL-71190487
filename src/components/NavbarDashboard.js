@@ -6,7 +6,7 @@ const NavbarDashboard = (props) => {
     <div className="myNav">
       <Navbar data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/">
             <img src={props.image} style={{ width: "100px" }} alt="" />
           </Navbar.Brand>
           <h5 className="text-white">Selamat Malam</h5>
