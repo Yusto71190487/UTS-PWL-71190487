@@ -5,34 +5,36 @@ import api from "../api";
 
 const Login = (props) => {
   const [user, setUser] = useState(null);
-  const [token, setToken] = useState(null);
+  //const [token, setToken] = useState(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const [errors, setErrors] = useState([]);
 
   const navigate = useNavigate();
-  const handleLogin = async () => {
-    await api
-      .post("/api/users", {
-        email: email,
-        password: password,
-      })
-      .then((response) => {
-        setToken(response.data.token);
-        setUser(response.data.user);
-        navigate("/dashboard");
-      })
-      .catch((error) => {
-        if (error.response && error.response.data) {
-          // Jika tidak undefined, setErrors dengan data dari response
-          setErrors(error.response.data);
-        } else {
-          // Jika error.response atau error.response.data undefined, tangani kasus lainnya di sini
-          // Misalnya, setErrors dengan pesan kesalahan umum
-          setErrors("Terjadi kesalahan saat memproses permintaan.");
-        }
-      });
+  const handleLogin = () => {
+    // await api
+    //   .post("/api/users", {
+    //     email: email,
+    //     password: password,
+    //   })
+    //   .then((response) => {
+    //     //setToken(response.data.token);
+    //     setUser(response.data.user);
+    //     console.log('login berhasil');
+    //     navigate("/dashboard");
+    //   })
+    //   .catch((error) => {
+    //     if (error.response && error.response.data) {
+    //       // Jika tidak undefined, setErrors dengan data dari response
+    //       setErrors(error.response.data);
+    //     } else {
+    //       // Jika error.response atau error.response.data undefined, tangani kasus lainnya di sini
+    //       // Misalnya, setErrors dengan pesan kesalahan umum
+    //       setErrors("Terjadi kesalahan saat memproses permintaan.");
+    //     }
+    //   });
+    navigate("/dashboard");
   };
   return (
     <div className="MyLg">

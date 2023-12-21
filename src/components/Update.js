@@ -107,7 +107,7 @@ const Update = () => {
           )}
         </Form.Text>
 
-        <Button className="btn btn-warning bnt mt-4" type="submit">
+        <Button className="btn btn-warning mt-4" type="submit">
           Tambah Data
         </Button>
       </Form>
